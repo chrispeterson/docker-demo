@@ -1,0 +1,14 @@
+version: "3"
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    command: ./node_modules/.bin/gatsby develop -H 0.0.0.0
+    environment:
+      - NODE_ENV=development      
+    volumes:
+      - ./client/src:/app/src # Links the source files to the running container
+      - ./client/public:/app/public
+    ports:
+      - 8000:8000

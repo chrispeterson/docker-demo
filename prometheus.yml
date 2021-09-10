@@ -1,0 +1,13 @@
+#global config
+global:
+  scrape_timeout:     1m
+  external_labels:
+    monitor: 'macbook-monitor'
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
+  - job_name: 'prompushgw'
+    honor_labels: true
+    static_configs:
+      - targets: ['prompushgateway:9091']
