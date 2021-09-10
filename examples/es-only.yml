@@ -2,7 +2,6 @@ version: "3.9"
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
-    container_name: elasticsearch
     environment:
       - xpack.security.enabled=false
       - discovery.type=single-node
@@ -22,4 +21,4 @@ services:
       - 9300:9300
 volumes:
   elasticsearch-data:
-    driver: local      
+    driver: local

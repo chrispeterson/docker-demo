@@ -1,5 +1,5 @@
 # start dev stack
-
+    docker-compose pull
     docker-compose up
 
 
